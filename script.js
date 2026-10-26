@@ -19,6 +19,7 @@
 
 function greet(name) {
   // Write your code here
+return "Hello, " + name + "!";
 
 }
 
@@ -29,18 +30,24 @@ function greet(name) {
 //
 // STEP 1: ABOVE this function, declare a global variable:
 //         let count = 0;
-//
 // STEP 2: Inside the function, add 1 to count.
-//
 // STEP 3: Return the new count value.
 //         First click → returns 1, second → returns 2, etc.
 
 
+let count = 0;
 
 function myFunc() {
   // Write your code here
+ count = count + 1;
+  return count;
 
 }
+let firstClick = myFunc();
+console.log(firstClick); 
+
+let secondClick = myFunc();
+console.log(secondClick); 
 
 
 // --- getRandomNum(max) ---
@@ -56,9 +63,15 @@ function myFunc() {
 // STEP 3: Return the random number.
 
 function getRandomNum(max) {
-  // Write your code here
+  // Write your code here 
+  if (isNaN(max) || max < 1) {
+    return 0;
+  } else {
+    return Math.floor(Math.random()*max) + 1;
+  }
 
 }
+
 
 
 // --- myAdder(x, y) ---
@@ -70,6 +83,7 @@ function getRandomNum(max) {
 
 function myAdder(x, y) {
   // Write your code here
+return x + y;
 
 }
 
@@ -88,6 +102,10 @@ function myAdder(x, y) {
 
 function distance(x1, y1, x2, y2) {
   // Write your code here
+squarex = (x2 - x1) ** 2;
+squarey = (y2 - y1) ** 2;
+sum = squarex + squarey;
+return Math.sqrt(sum).toFixed(2);
 
 }
 
@@ -101,8 +119,13 @@ function distance(x1, y1, x2, y2) {
 //         using .toFixed(2).
 //         Example: tipCalc(50, 20) → tip is 10, total is "60.00"
 
+let tipAmount = 0
+let total = 0
 function tipCalc(bill, tipPercent) {
   // Write your code here
+tipAmount = bill * (tipPercent / 100);
+total = bill + tipAmount;
+return total.toFixed(2);
 
 }
 
